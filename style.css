@@ -1,0 +1,214 @@
+/* สไตล์ทั่วไป (จอใหญ่ Desktop) */
+body {
+  font-family: 'Prompt', sans-serif;
+  background: linear-gradient(to right, #f1f7ff, #e0f2f1);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #00695c;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.container {
+  flex: 1;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.route-finder {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.route-finder h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+select,
+button {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+  outline: none;
+}
+
+button {
+  background-color: #00897b;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+
+#map,
+#map.map-container {
+  flex: 1;
+  height: 500px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+.info-box {
+  background-color: #f1f8e9;
+  line-height: 1.6;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+#status {
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+  font-size: 0.9rem;
+  background-color: #fafafa;
+  border-top: 1px solid #eee;
+}
+
+/* เพิ่มเส้นตรงไปยังปลายทาง */
+.leaflet-polyline-straight {
+  stroke: blue;
+  stroke-width: 4;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 4, 6;
+}
+
+/* =================== */
+
+/* มือถือเล็ก (จอ <= 360px) */
+@media (max-width: 360px) {
+  .container {
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 100%;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  select, button {
+    min-width: 100%;
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+  #map {
+    height: 300px;
+    margin-top: 0.5rem;
+  }
+}
+
+/* มือถือกลาง (361px ถึง 600px) */
+@media (min-width: 361px) and (max-width: 600px) {
+  .container {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  select, button {
+    min-width: 100%;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+  #map {
+    height: 400px;
+    margin-top: 0.75rem;
+  }
+}
+
+/* ไอแพด / แท็บเล็ต (601px ถึง 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .container {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  .form-row {
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  select, button {
+    min-width: 180px;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  #map {
+    height: 450px;
+    margin-top: 1rem;
+  }
+}
+
+/* จอคอม (901px ขึ้นไป) */
+@media (min-width: 901px) {
+  .container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  .form-row {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  select, button {
+    min-width: 200px;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  #map {
+    height: 500px;
+    margin-top: 1rem;
+  }
+}
